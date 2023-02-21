@@ -209,7 +209,7 @@ class Client:
 
             if info is None:
                 _result = self._get_info(sid)
-                if _result['code'] == '2333':
+                if _result['code'] == 2333:
                     return {"code": 2333, "msg": _result['msg']}
                 elif _result['code'] == 1003:
                     return {"code": 1003, "msg": _result['msg']}
