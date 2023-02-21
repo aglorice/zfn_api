@@ -322,7 +322,7 @@ class Client:
             else "/cjcx/cjcx_cxXsgrcj.html?doType=query&gnmkdm=N305005",
         )
         temp_term = term
-        term = term ** 2 * 3
+        term = term**2 * 3
         term = "" if term == 0 else term
         data = {
             "xnm": str(year),  # 学年数
@@ -394,7 +394,7 @@ class Client:
         """获取课程表信息"""
         url = urljoin(self.base_url, "/kbcx/xskbcx_cxXsKb.html?gnmkdm=N2151")
         temp_term = term
-        term = term ** 2 * 3
+        term = term**2 * 3
         data = {"xnm": str(year), "xqm": str(term)}
         try:
             req_schedule = self.sess.post(
@@ -682,12 +682,12 @@ class Client:
         url_policy = urljoin(self.base_url, "/kbdy/bjkbdy_cxXnxqsfkz.html")
         url_file = urljoin(self.base_url, "/kbcx/xskbcx_cxXsShcPdf.html")
         origin_term = term
-        term = term ** 2 * 3
+        term = term**2 * 3
         data = {
             "xm": name,
             "xnm": str(year),
             "xqm": str(term),
-            "xnmc": f"{year}-{year + 1}",
+            "xnmc": f"{year}-{year+1}",
             "xqmmc": str(origin_term),
             "jgmc": "undefined",
             "xxdm": "",
@@ -805,7 +805,7 @@ class Client:
                 "/xsxk/zzxkyzb_cxZzxkYzbChoosedDisplay.html?gnmkdm=N253512",
             )
             temp_term = term
-            term = term ** 2 * 3
+            term = term**2 * 3
             data = {"xkxnm": str(year), "xkxqm": str(term)}
             req_selected = self.sess.post(
                 url,
@@ -934,7 +934,7 @@ class Client:
             url_bkk = urljoin(
                 self.base_url, "/xsxk/zzxkyzb_cxJxbWithKchZzxkYzb.html?gnmkdm=N253512"
             )
-            term = term ** 2 * 3
+            term = term**2 * 3
             kch_data = {
                 "bklx_id": head_data["bklx_id"],
                 "xqh_id": head_data["xqh_id"],
@@ -1043,7 +1043,7 @@ class Client:
             url_select = urljoin(
                 self.base_url, "/xsxk/zzxkyzb_xkBcZyZzxkYzb.html?gnmkdm=N253512"
             )
-            term = term ** 2 * 3
+            term = term**2 * 3
             select_data = {
                 "jxb_ids": do_id,
                 "kch_id": course_id,
@@ -1095,7 +1095,7 @@ class Client:
             url_cancel = urljoin(
                 self.base_url, "/xsxk/zzxkyzb_tuikBcZzxkYzb.html?gnmkdm=N253512"
             )
-            term = term ** 2 * 3
+            term = term**2 * 3
             cancel_data = {
                 "jxb_ids": do_id,
                 "kch_id": course_id,
@@ -1287,9 +1287,9 @@ class Client:
             list(i)
             for i in finder_list
             if i[0] != ""  # 类型名称不为空
-               and len(i[0]) <= 20  # 避免正则到首部过长类型名称
-               and "span" not in i[-1]  # 避免正则到尾部过长类型名称
-               and i[0] not in cls.ignore_type  # 忽略的类型名称
+            and len(i[0]) <= 20  # 避免正则到首部过长类型名称
+            and "span" not in i[-1]  # 避免正则到尾部过长类型名称
+            and i[0] not in cls.ignore_type  # 忽略的类型名称
         ]
         result = {
             i[0]: {
